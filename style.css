@@ -1,0 +1,144 @@
+/* Reset and base styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  transition: background 0.4s, color 0.4s;
+  padding: 20px;
+}
+
+/* Light & Dark Themes */
+body.light {
+  --bg: linear-gradient(135deg, #f3f3f3, #cbd6f1);
+  --box-bg: #fff;
+  --text-color: #2d0b68;
+  --input-bg: #f1f1f1;
+  --item-bg: #f9f9f9;
+}
+body.dark {
+  --bg: linear-gradient(135deg, #121212, #2f2f5e);
+  --box-bg: #2c2c2c;
+  --text-color: #fff;
+  --input-bg: #444;
+  --item-bg: #3a3a3a;
+}
+
+body {
+  background: var(--bg);
+}
+
+.container {
+  background: var(--box-bg);
+  padding: 25px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 26px;
+  color: var(--text-color);
+}
+
+#toggleMode {
+  background: none;
+  border: none;
+  font-size: 26px;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.inputBox {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 16px;
+  font-size: 18px;
+  border: none;
+  border-radius: 12px;
+  background: var(--input-bg);
+  color: var(--text-color);
+  min-width: 60%;
+}
+
+button {
+  padding: 16px 22px;
+  font-size: 16px;
+  border: none;
+  border-radius: 12px;
+  background-color: #ff6b3d;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  background: var(--item-bg);
+  margin-bottom: 14px;
+  padding: 14px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+li.completed .task-text {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-text {
+  font-size: 18px;
+  color: var(--text-color);
+}
+
+.task-time {
+  font-size: 12px;
+  color: #999;
+}
+
+.check, .delete {
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.check {
+  color: #ff6b3d;
+}
+
+.delete {
+  color: crimson;
+}
